@@ -168,7 +168,7 @@ class Trainer:
     def eval_and_save(self):
         remaining_epochs = self.max_epoch - self.epoch
         eval_interval = self.args.eval_interval if remaining_epochs > self.args.heavy_eval_range else 3
-        is_val_epoch = (not self.args.eval_final_only or (remaining_epochs == 1)) and ((self.epoch + 1) % (eval_interval == 0) or (remaining_epochs == 1))
+        is_val_epoch = ((not self.args.eval_final_only or (remaining_epochs == 1)) and ((self.epoch + 1) % eval_interval == 0)) or (remaining_epochs == 1)
         if self.main_process:
             self.ema.update_attr(self.model, include=['nc', 'names', 'stride']) # update attributes for ema model
             if is_val_epoch:
