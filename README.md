@@ -13,8 +13,8 @@
 - __安装__
 
 ~~~shell
-git clone https://gitee.com/hyl1626757530/lp_-detection
-cd lp_-detection
+git clone https://github.com/KyleHuang9/YOLO-LP
+cd YOLO-LP
 pip install -r requirements.txt
 ~~~
 
