@@ -23,7 +23,7 @@ pip install -r requirements.txt
 首先，自行下载CCPD2019数据集，然后运行下面的命令进行数据集转换。
 
 ~~~shell
-py data/transCCPD.py --source1 [CCPD2019 Path] --source2 [CCPD2020 Path] -o [Output Path]
+python data/transCCPD.py --source1 [CCPD2019 Path] --source2 [CCPD2020 Path] -o [Output Path]
 ~~~
 
 - __训练__
@@ -35,12 +35,12 @@ python tools/train.py --batch 32 --conf configs/yololps.py --data data/dataset.y
 - __测试__
 
 ~~~shell
-py tools/eval.py --data data/dataset.yaml --batch 32 --weights [weighs-dir] --task val
+python tools/eval.py --data data/dataset.yaml --batch 32 --weights [weighs-dir] --task val
 ~~~
 
 - __推理__
 
 ~~~shell
-py tools/infer.py --weights [weights-dir] --source [image/image-dir/video]
+python tools/infer.py --weights [weights-dir] --source [image/image-dir/video]
 ~~~
 

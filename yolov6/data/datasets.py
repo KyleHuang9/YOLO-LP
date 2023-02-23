@@ -164,7 +164,7 @@ class TrainValDataset(Dataset):
                 corners[:, 7] = h * labels[:, 19] + pad[1]
                 labels[:, 12:] = corners
 
-            if random.random() < self.hyp["generate"]:
+            if "generate" in self.hyp and random.random() < self.hyp["generate"]:
                 img, labels = self.get_generate(img, labels)
 
             if self.augment:
